@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  
+  etl_process:
+    build: .
+    command: sh -c 'sleep 30s && ./run.sh'
+    volumes:
+      - ./:/src
+    env_file:
+      - ../infra/venvsenv
+
+  db:
+    image: postgres:9.4.15
+    stdin_open: true
+    environment:
+     - POSTGRES_PASSWORD=123456
+     - POSTGRES_USER=user
+     - POSTGRES_DB=warehouse
