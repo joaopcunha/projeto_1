@@ -27,13 +27,24 @@ CREATE TABLE IF NOT EXISTS tbl_cities
 (id INT PRIMARY KEY NOT NULL,
 city_name VARCHAR NOT NULL,
 elevation INT,
-population INT
+population INT,
+location_key INT
 )
 '''
 
 create_daily_city_conditions_query = '''
 CREATE TABLE IF NOT EXISTS tbl_daily_city_conditions
-(observation_date TIMESTAMP WITH TIME ZONE,
+(observation_date TIMESTAMP,
+city_id INT,
+daily_temperature_amplitude INT,
+UNIQUE (observation_date, city_id)
+)
+'''
+
+
+create_hour_city_conditions_query = '''
+CREATE TABLE IF NOT EXISTS tbl_hour_city_conditions
+(observation_date TIMESTAMP,
 city_id INT,
 precipitation INT,
 temperature INT,
@@ -44,15 +55,15 @@ UNIQUE (observation_date, city_id)
 insert_query = "INSERT INTO tbl_cities(id, city_name) VALUES (%s, %s)"
 list_of_values = [
     [1, "São Paulo"],
-    [2, "Santos"],
-    [3, "Ribeirão Preto"],
-    [4, "Sorocaba"],
-    [5, "São José dos Campos"],
-    [6, "Atibaia"],
-    [7, "Bauru"],
-    [8, "Presidente Prudente"],
-    [9, "Campinas"],
-    [10, "Campos do Jordão"]
+    [2, "Santos"]
+    # [3, "Ribeirão Preto"],
+    # [4, "Sorocaba"],
+    # [5, "São José dos Campos"],
+    # [6, "Atibaia"],
+    # [7, "Bauru"],
+    # [8, "Presidente Prudente"],
+    # [9, "Campinas"],
+    # [10, "Campos do Jordão"]
 ]
 
 dbconn.run_query(create_city_table_query)
@@ -60,5 +71,6 @@ dbconn.run_query(create_city_table_query)
 for values in list_of_values:
     dbconn.insert(insert_query, values)
 
+dbconn.run_query(create_hour_city_conditions_query)
 dbconn.run_query(create_daily_city_conditions_query)
 dbconn.close_connection()

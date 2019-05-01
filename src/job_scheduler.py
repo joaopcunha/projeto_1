@@ -4,20 +4,15 @@ import sys
 import signal
 import time
 
+from jobs import city_info_job
+from jobs import daily_etl_job
+
 logging.info("ETL jobs initialized")
 stop_thread = False
 
-def first_job():
-    pass
-    #run do primeiro job
-
-def second_job():
-    pass
-    #run do segundo job
-
 def construct_schedule():
-    schedule.every().day.at("00:00").do(first_job)
-    schedule.every().monday.do(second_job)
+    schedule.every().day.at("00:00").do(daily_etl_job.run_job)
+    schedule.every().monday.do(city_info_job.run_job)
 
 def start():
     construct_schedule()

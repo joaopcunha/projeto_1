@@ -33,11 +33,13 @@ def run_job():
 
         city_population = api_city_info[0]['Details']['Population']
         city_elevation = api_city_info[0]['GeoPosition']['Elevation']['Metric']["Value"]
+        location_key = api_city_info[0]['Key']
 
         dbconn.run_query(
-            "UPDATE tbl_cities SET population = {}, elevation = {} WHERE city_name = '{}'".format(
+            "UPDATE tbl_cities SET population = {}, elevation = {}, location_key = {} WHERE city_name = '{}'".format(
                 city_population, 
                 city_elevation,
+                location_key,
                 city_name
             )
         )

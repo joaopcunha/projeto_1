@@ -43,6 +43,12 @@ class DbConnectionPSQL:
             conn.commit()
             return True
 
+        except psycopg2.IntegrityError:
+            conn.commit()
+            logging.info(
+                "Tried to insert duplicate keys at query {}".format(sql)
+            )
+
         except Exception as e:
             conn.commit()
             raise ValueError(
