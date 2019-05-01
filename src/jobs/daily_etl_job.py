@@ -56,7 +56,7 @@ def run_job():
 
             dbconn.insert(
                 "INSERT INTO tbl_daily_city_conditions(observation_date, city_id, precipitation, temperature) VALUES (%s, %s, %s, %s)",
-                [condition_date, city['city_id'], precipitation, temperature]
+                [condition_date, location['city_id'], precipitation, temperature]
             )
 
 if __name__ == '__main__':
