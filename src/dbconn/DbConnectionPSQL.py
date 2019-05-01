@@ -1,4 +1,5 @@
 import psycopg2
+import psycopg2.extras
 import logging
 
 class DbConnectionPSQL:
@@ -17,12 +18,12 @@ class DbConnectionPSQL:
                 "Unable to connect to the database \n Error: {}".format(e)
                 )
 
-    def select(self, sql:str, values=None):
+    def select(self, sql:str):
         try:
             conn = self.__conn
-            cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+            cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
-            cur.execute(sql, values)
+            cur.execute(sql)
             rows = cur.fetchall()
             conn.commit()
 
@@ -31,7 +32,7 @@ class DbConnectionPSQL:
         except Exception as e:
             conn.commit()
             raise ValueError(
-                "Unable to select from table {} \n Error: {}".format(table_name, e)
+                "Unable to run select query {} \n Error: {}".format(sql, e)
             )
 
     def insert(self, sql:str, values=None):

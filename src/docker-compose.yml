@@ -4,11 +4,11 @@ services:
   
   etl_process:
     build: .
-    command: sh -c 'sleep 30s && ./run.sh'
+    command: sh -c 'sleep 30s && python ./scripts/create_tables_script.py && python scheduler.py'
     volumes:
       - ./:/src
     env_file:
-      - ../infra/venvsenv
+      - infra/venvs.env
 
   db:
     image: postgres:9.4.15
@@ -17,3 +17,9 @@ services:
      - POSTGRES_PASSWORD=123456
      - POSTGRES_USER=user
      - POSTGRES_DB=warehouse
+    
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
