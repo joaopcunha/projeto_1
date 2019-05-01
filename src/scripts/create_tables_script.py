@@ -36,9 +36,7 @@ CREATE TABLE IF NOT EXISTS tbl_daily_city_conditions
 (observation_date TIMESTAMP WITH TIME ZONE,
 city_id INT,
 precipitation INT,
-max_temperature INT,
-min_temperature INT,
-temperatur_amplitude INT,
+temperature INT,
 UNIQUE (observation_date, city_id)
 )
 '''
