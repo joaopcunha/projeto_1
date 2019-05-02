@@ -21,7 +21,9 @@ api = WeatherService(
 )
 
 def get_db_cities():
-    return dbconn.select("SELECT * FROM tbl_cities")
+    query_result = dbconn.select("SELECT * FROM tbl_cities")
+
+    return query_result if query_result else []
 
 def get_locations():
 

@@ -4,7 +4,7 @@ services:
   
   etl_process:
     build: .
-    command: sh -c 'sleep 30s && python ./scripts/create_tables_script.py && python ./jobs/city_info_job.py && python job_scheduler.py'
+    command: sh -c 'sleep 30s && ./start_process.sh'
     volumes:
       - ./:/src
     env_file:

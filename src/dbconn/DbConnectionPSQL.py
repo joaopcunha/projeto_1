@@ -43,10 +43,10 @@ class DbConnectionPSQL:
             conn.commit()
             return True
 
-        except psycopg2.IntegrityError:
+        except psycopg2.IntegrityError as e:
             conn.commit()
             logging.info(
-                "Tried to insert duplicate keys at query {}".format(sql)
+                "Tried to insert duplicate keys at query {} \n Error: {}".format(sql, e)
             )
 
         except Exception as e:
@@ -67,23 +67,6 @@ class DbConnectionPSQL:
             conn.commit()
             raise ValueError(
                 "Unable to run query {} \n Error: {}".format(sql, e)
-            )
-
-    def create_indexes(self, indexes, table_name):
-        try:
-            conn = self.__conn
-            for index in indexes:
-                cur = conn.cursor()
-                cur.execute("CREATE INDEX {} ON {} ({})".format(
-                    index, table_name, index
-                ))
-                conn.commit()
-            return True
-
-        except Exception as e:
-            conn.commit()
-            raise ValueError(
-                "Unable to create index for table {} \n Error: {}".format(table_name, e)
             )
 
     def close_connection(self):
