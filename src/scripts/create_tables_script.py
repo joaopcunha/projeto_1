@@ -66,6 +66,8 @@ list_of_values = [
     # [10, "Campos do Jordão"]
 ]
 
+print("Creating initial tables...")
+
 dbconn.run_query(create_city_table_query)
 
 for values in list_of_values:
@@ -74,3 +76,5 @@ for values in list_of_values:
 dbconn.run_query(create_hour_city_conditions_query)
 dbconn.run_query(create_daily_city_conditions_query)
 dbconn.close_connection()
+
+print("Initial tables created")

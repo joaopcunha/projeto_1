@@ -63,6 +63,7 @@ def populate_daily_condition(location, api_city_conditions):
             )
 
 def run_job():
+    print("Running daily jobs...")
 
     locations = get_locations()
 
@@ -71,6 +72,7 @@ def run_job():
         populate_hour_condition(location, api_city_conditions)
         populate_daily_condition(location, api_city_conditions)
         
+    print("Daily jobs successfull")
 
 if __name__ == '__main__':
     run_job()

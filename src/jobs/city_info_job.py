@@ -23,6 +23,7 @@ def get_db_cities():
     return dbconn.select("SELECT * FROM tbl_cities")
 
 def run_job():
+    print("Running city info job...")
     db_cities = get_db_cities()
 
     for city in db_cities:
@@ -43,6 +44,8 @@ def run_job():
                 city_name
             )
         )
+    
+    print("City info job successfull")
 
 if __name__ == '__main__':
     run_job()
