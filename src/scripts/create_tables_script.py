@@ -55,15 +55,15 @@ UNIQUE (observation_date, city_id)
 insert_query = "INSERT INTO tbl_cities(id, city_name) VALUES (%s, %s)"
 list_of_values = [
     [1, "São Paulo"],
-    [2, "Santos"]
-    # [3, "Ribeirão Preto"],
-    # [4, "Sorocaba"],
-    # [5, "São José dos Campos"],
-    # [6, "Atibaia"],
-    # [7, "Bauru"],
-    # [8, "Presidente Prudente"],
-    # [9, "Campinas"],
-    # [10, "Campos do Jordão"]
+    [2, "Santos"],
+    [3, "Ribeirão Preto"],
+    [4, "Sorocaba"],
+    [5, "São José dos Campos"],
+    [6, "Atibaia"],
+    [7, "Bauru"],
+    [8, "Presidente Prudente"],
+    [9, "Campinas"],
+    [10, "Campos do Jordão"]
 ]
 
 print("Creating initial tables...")
