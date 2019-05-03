@@ -5,7 +5,7 @@ SELECT * FROM tbl_cities WHERE elevation = (SELECT MAX(elevation) from tbl_citie
 SELECT * FROM tbl_cities WHERE population = (SELECT MIN(population) from tbl_cities);
 
 --Query responsável por mostrar o volume acumulado de precipitações por cidade em um período de tempo
---escolhido dinamicamente. O parametro 36 hours pode ser alterado para determinar a partir de quantas horas
+--escolhido dinamicamente. O parametro 36 hour pode ser alterado para determinar a partir de quantas horas
 --atrás deseja-se averiguar o volume de precipitação acumulado*
 SELECT tbl_cities.city_name, grouped_table.sum FROM 
 (SELECT city_id, SUM(precipitation) FROM tbl_hour_city_conditions 

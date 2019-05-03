@@ -17,6 +17,9 @@ services:
      - POSTGRES_PASSWORD=123456
      - POSTGRES_USER=user
      - POSTGRES_DB=warehouse
+     - PGPASSWORD=123456
+    ports:
+      - 5433:5432
     
   adminer:
     image: adminer

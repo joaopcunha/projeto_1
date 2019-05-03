@@ -2,3 +2,7 @@ schedule
 python-dateutil
 requests==2.14.2
 psycopg2-binary==2.7.3.2
+matplotlib
+seaborn
+pandas
+jupyter
