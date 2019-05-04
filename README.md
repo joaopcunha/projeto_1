@@ -2,18 +2,18 @@ SOBRE O PROJETO
 
 O código aqui apresentado tem como objetivo manter alguns jobs rodando diariamente para atualizar as informações de um banco de dados através da consulta a uma API de dados metereológicos e o mecanismo de agendamento da biblioteca scheduler do Python
 
-A pasta ./api contém a classe de comunicação com  a API da AccuWeather
-A pasta ./dbcoon contém a classe de comunicação com o banco de dados utilizado (postgresql)
-A pasta ./infra contém as variáveis de ambiente utilizadas no projeto, como as credenciais do banco e o token de acesso à API
-A pasta ./jobs contém o código dos processos de ETL responsável por realizar as requisições e atualizar o banco de dados
-A pasta ./scripts contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto
+A pasta ./api contém a classe de comunicação com  a API da AccuWeather.
+A pasta ./dbcoon contém a classe de comunicação com o banco de dados utilizado (postgresql).
+A pasta ./infra contém as variáveis de ambiente utilizadas no projeto, como as credenciais do banco e o token de acesso à API.
+A pasta ./jobs contém o código dos processos de ETL responsável por realizar as requisições e atualizar o banco de dados.
+A pasta ./scripts contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto.
 Por fim, a pasta ./views contém as queries que podem ser realizadas para responder algumas informações, bem como um notebook ipynb como algumas visualizações realizadas com dados de uma determinada data.
 
-Instalando e rodando
+INSTALANDO E RODANDO
 
 O projeto foi desenvolvido utilizando Docker, de forma facilitiar sua avaliação, configuração e instalação de dependências;
 
-Ao rodar o comando docker-compose up --build, as dependência são instaladas, as variáveis de ambientes configurdas, e são leventados 3 containers
+Ao rodar o comando docker-compose up --build, as dependência são instaladas, as variáveis de ambientes configurdas, e são leventados 3 containers.
 -> Um banco de dados local em postgresql, com a porta padrão 5433, usuário: user, senha: 123456 e nome do banco: warehouse;
 -> Uma imagem do adminer, disponível na porta 8080, de modo a facilitar as consultas ao banco
 -> O container do projeto, o qual ao subir já roda o script inicial e o processo de agendamento dos jobs diários
