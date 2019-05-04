@@ -2,11 +2,11 @@ SOBRE O PROJETO
 
 O código aqui apresentado tem como objetivo manter alguns jobs rodando diariamente para atualizar as informações de um banco de dados através da consulta a uma API de dados metereológicos e o mecanismo de agendamento da biblioteca scheduler do Python
 
-A pasta ./api contém a classe de comunicação com  a API da AccuWeather.
-A pasta ./dbcoon contém a classe de comunicação com o banco de dados utilizado (postgresql).
-A pasta ./infra contém as variáveis de ambiente utilizadas no projeto, como as credenciais do banco e o token de acesso à API.
-A pasta ./jobs contém o código dos processos de ETL responsável por realizar as requisições e atualizar o banco de dados.
-A pasta ./scripts contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto.
+A pasta ./api contém a classe de comunicação com  a API da AccuWeather. <br>
+A pasta ./dbcoon contém a classe de comunicação com o banco de dados utilizado (postgresql).<br>
+A pasta ./infra contém as variáveis de ambiente utilizadas no projeto, como as credenciais do banco e o token de acesso à API.<br>
+A pasta ./jobs contém o código dos processos de ETL responsável por realizar as requisições e atualizar o banco de dados.<br>
+A pasta ./scripts contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto.<br>
 Por fim, a pasta ./views contém as queries que podem ser realizadas para responder algumas informações, bem como um notebook ipynb como algumas visualizações realizadas com dados de uma determinada data.
 
 INSTALANDO E RODANDO
