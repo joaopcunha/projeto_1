@@ -1,4 +1,4 @@
-<b>SOBRE O PROJETOU</b>
+<b>SOBRE O PROJETO</b>
 
 O código aqui apresentado tem como objetivo manter alguns jobs rodando diariamente para atualizar as informações de um banco de dados através da consulta a uma API de dados metereológicos e o mecanismo de agendamento da biblioteca scheduler do Python
 
