@@ -1,4 +1,4 @@
-<u>SOBRE O PROJETOU</u>
+<b>SOBRE O PROJETOU</b>
 
 O código aqui apresentado tem como objetivo manter alguns jobs rodando diariamente para atualizar as informações de um banco de dados através da consulta a uma API de dados metereológicos e o mecanismo de agendamento da biblioteca scheduler do Python
 
@@ -9,7 +9,7 @@ A pasta ./jobs contém o código dos processos de ETL responsável por realizar 
 A pasta ./scripts contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto.<br>
 Por fim, a pasta ./views contém as queries que podem ser realizadas para responder algumas informações, bem como um notebook ipynb como algumas visualizações realizadas com dados de uma determinada data.
 
-<u>INSTALANDO E RODANDO</u>
+<b>INSTALANDO E RODANDO</b>
 
 O projeto foi desenvolvido utilizando Docker, de forma facilitiar sua avaliação, configuração e instalação de dependências;
 
