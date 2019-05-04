@@ -13,15 +13,15 @@ INSTALANDO E RODANDO
 
 O projeto foi desenvolvido utilizando Docker, de forma facilitiar sua avaliação, configuração e instalação de dependências;
 
-Ao rodar o comando docker-compose up --build, as dependência são instaladas, as variáveis de ambientes configurdas, e são leventados 3 containers.
--> Um banco de dados local em postgresql, com a porta padrão 5433, usuário: user, senha: 123456 e nome do banco: warehouse;
--> Uma imagem do adminer, disponível na porta 8080, de modo a facilitar as consultas ao banco
--> O container do projeto, o qual ao subir já roda o script inicial e o processo de agendamento dos jobs diários
+Ao rodar o comando docker-compose up --build, as dependência são instaladas, as variáveis de ambientes configurdas, e são leventados 3 containers.<br>
+-> Um banco de dados local em postgresql, com a porta padrão 5433, usuário: user, senha: 123456 e nome do banco: warehouse;<br>
+-> Uma imagem do adminer, disponível na porta 8080, de modo a facilitar as consultas ao banco;<br>
+-> O container do projeto, o qual ao subir já roda o script inicial e o processo de agendamento dos jobs diários;
 
-Os jobs atualizam primordialmente três tabelas no banco warehouse:
-tbl_cities -> tabela com informaçṍes de cada cidade, como sua elevação, população, e chave da API;
-tbl_hour_city_conditios -> tabela de série temporal com informações de precipitação e temperatura horárias para cada cidade
-tbl_daily_city_conditions -> tabela de série temporal com informações de amplitude média por dia para cada cidade
+Os jobs atualizam primordialmente três tabelas no banco warehouse:<br>
+tbl_cities -> tabela com informaçṍes de cada cidade, como sua elevação, população, e chave da API;<br>
+tbl_hour_city_conditios -> tabela de série temporal com informações de precipitação e temperatura horárias para cada cidade;<br>
+tbl_daily_city_conditions -> tabela de série temporal com informações de amplitude média por dia para cada cidade;
 
 As cidades presentes no banco são:
 São Paulo, Santos, Ribeirão Preto, Sorocaba, São José dos Campos, Atibaia, Bauru, Presidente Prudente, Campinas e Campos do Jordão.
