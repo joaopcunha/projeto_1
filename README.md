@@ -1,4 +1,4 @@
-SOBRE O PROJETO
+<u>SOBRE O PROJETOU</u>
 
 O código aqui apresentado tem como objetivo manter alguns jobs rodando diariamente para atualizar as informações de um banco de dados através da consulta a uma API de dados metereológicos e o mecanismo de agendamento da biblioteca scheduler do Python
 
@@ -9,7 +9,7 @@ A pasta ./jobs contém o código dos processos de ETL responsável por realizar 
 A pasta ./scripts contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto.<br>
 Por fim, a pasta ./views contém as queries que podem ser realizadas para responder algumas informações, bem como um notebook ipynb como algumas visualizações realizadas com dados de uma determinada data.
 
-INSTALANDO E RODANDO
+<u>INSTALANDO E RODANDO</u>
 
 O projeto foi desenvolvido utilizando Docker, de forma facilitiar sua avaliação, configuração e instalação de dependências;
 
@@ -19,9 +19,9 @@ Ao rodar o comando docker-compose up --build, as dependência são instaladas, a
 -> O container do projeto, o qual ao subir já roda o script inicial e o processo de agendamento dos jobs diários;
 
 Os jobs atualizam primordialmente três tabelas no banco warehouse:<br>
-tbl_cities -> tabela com informaçṍes de cada cidade, como sua elevação, população, e chave da API;<br>
-tbl_hour_city_conditios -> tabela de série temporal com informações de precipitação e temperatura horárias para cada cidade;<br>
-tbl_daily_city_conditions -> tabela de série temporal com informações de amplitude média por dia para cada cidade;
+*tbl_cities* -> tabela com informaçṍes de cada cidade, como sua elevação, população, e chave da API;<br>
+*tbl_hour_city_conditios* -> tabela de série temporal com informações de precipitação e temperatura horárias para cada cidade;<br>
+*tbl_daily_city_conditions* -> tabela de série temporal com informações de amplitude média por dia para cada cidade;
 
 As cidades presentes no banco são:
 São Paulo, Santos, Ribeirão Preto, Sorocaba, São José dos Campos, Atibaia, Bauru, Presidente Prudente, Campinas e Campos do Jordão.
