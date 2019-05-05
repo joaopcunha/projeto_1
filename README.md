@@ -27,5 +27,3 @@ As cidades presentes no banco são:
 São Paulo, Santos, Ribeirão Preto, Sorocaba, São José dos Campos, Atibaia, Bauru, Presidente Prudente, Campinas e Campos do Jordão.
 
 Observa-se que caso exista a necessidade de gerar dashs atualizados é preciso rodar o jupyter notebook localmente (fora do container docker do projeto) e instalar as dependências necessárias na máquina local, visto que não foi gerada uma imagem do jupyter notebook
-
-Foi utilizado o sistema de agendamento da biblioteca scheduler do python por fins de simplicidade, pois como não há dependência entre os jobs criados (por garantir que o job inicial é executado sempre que o container é levantado) utilizar o Airflow para agendamento e controle de upstream entre tasks não se mostrou essencial;
