@@ -75,6 +75,7 @@ def run_job():
         populate_daily_condition(location, api_city_conditions)
         
     print("Daily jobs successfull")
+    dbconn.close_connection()
 
 if __name__ == '__main__':
     run_job()

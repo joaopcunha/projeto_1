@@ -5,9 +5,9 @@ O código aqui apresentado tem como objetivo manter alguns jobs rodando diariame
 A pasta ./api contém a classe de comunicação com  a API da AccuWeather. <br>
 A pasta ./dbcoon contém a classe de comunicação com o banco de dados utilizado (postgresql).<br>
 A pasta ./infra contém as variáveis de ambiente utilizadas no projeto, como as credenciais do banco e o token de acesso à API.<br>
-A pasta ./jobs contém o código dos processos de ETL responsável por realizar as requisições e atualizar o banco de dados.<br>
+A pasta ./jobs contém o código dos processos de ETL responsáveis por realizar as requisições e atualizar o banco de dados.<br>
 A pasta ./scripts contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto.<br>
-Por fim, a pasta ./views contém as queries que podem ser realizadas para responder algumas informações, bem como um notebook ipynb como algumas visualizações realizadas com dados de uma determinada data.
+Por fim, a pasta ./views contém as queries que podem ser realizadas para responder algumas informações, bem como um notebook ipynb como algumas visualizações realizadas com dados do dia 04/05/2019.
 
 <b>INSTALANDO E RODANDO</b>
 

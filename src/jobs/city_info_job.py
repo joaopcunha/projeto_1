@@ -46,6 +46,7 @@ def run_job():
         )
     
     print("City info job successfull")
+    dbconn.close_connection()
 
 if __name__ == '__main__':
     run_job()
