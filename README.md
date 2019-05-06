@@ -8,7 +8,7 @@ Descrição das pastas:
 3) ./infra: contém as variáveis de ambiente utilizadas no projeto, como as credenciais do banco e o token de acesso à API.<br>
 4) ./jobs: contém o código dos processos de ETL responsáveis por realizar as requisições e atualizar o banco de dados.<br>
 5) ./scripts: contém um script inicial para criação e população do banco, o qual é executado ao subir o projeto.<br>
-6) ./views: contém as queries que podem ser realizadas para responder as informações de interesse; um notebook ipynb como algumas visualizações realizadas com dados do dia 04/05/2019; e uma relatório estático em html estático deste notebook.
+6) ./views: contém as queries que podem ser realizadas para responder as informações de interesse; um notebook ipynb como algumas visualizações realizadas com dados do dia 04/05/2019; e uma relatório estático em html deste notebook.
 
 <b>INSTALANDO E RODANDO</b>
 
@@ -21,10 +21,10 @@ Ao rodar o comando docker-compose up --build, as dependência são instaladas, a
 
 Os jobs atualizam primordialmente três tabelas no banco warehouse:<br>
 *tbl_cities* -> tabela com informaçṍes de cada cidade, como sua elevação, população, e chave da API;<br>
-*tbl_hour_city_conditios* -> tabela de série temporal com informações de precipitação e temperatura horárias para cada cidade;<br>
+*tbl_hour_city_conditios* -> tabela de série temporal com informações de precipitação e temperatura de hora em hora para cada cidade;<br>
 *tbl_daily_city_conditions* -> tabela de série temporal com informações de amplitude média por dia para cada cidade;
 
 As cidades presentes no banco são:
 São Paulo, Santos, Ribeirão Preto, Sorocaba, São José dos Campos, Atibaia, Bauru, Presidente Prudente, Campinas e Campos do Jordão.
 
-Observação: caso exista a necessidade de gerar dashs atualizados é preciso rodar o jupyter notebook localmente e instalar as dependências necessárias na máquina local, visto que não foi gerada uma imagem do jupyter notebook.
+Observação: caso exista a necessidade de gerar dashs atualizados é preciso rodar o jupyter notebook localmente e instalar as dependências necessárias na máquina local, visto que sua imagem não foi incluida no docker-compose.yml
